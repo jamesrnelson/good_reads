@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User' do
   context 'goes to book show page' do
-    it 'should display the average rating' do
+    it 'should display the highest and lowest ratings' do
       book1 = Book.create!(title: 'War and Peace')
       user2 = User.create!(name: 'Dostoevsky')
       user2.reviews.create!(body: 'This book is mediocre. I could do better', rating: 3, book: book1)
@@ -12,7 +12,8 @@ describe 'User' do
 
       visit book_path(book1)
 
-      expect(page).to have_content('Average Rating: 2')
+      expect(page).to have_content('Highest Rating: 3')
+      expect(page).to have_content('Lowest Rating: 1')
     end
   end
 end

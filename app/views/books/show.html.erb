@@ -1,6 +1,10 @@
 <h1> <%= @book.title %> </h1>
 
-<h3>Average Rating: <%= @book.reviews.average(:rating) %> </h3>
+<h3>Average Rating: <%= @average_rating %> </h3>
+
+<h5>Highest Rating: <%= @highest_rating %></h5>
+<h5>Lowest Rating: <%= @lowest_rating %></h5>
+
 
 <h3>Reviews</h3>
 <ul>
