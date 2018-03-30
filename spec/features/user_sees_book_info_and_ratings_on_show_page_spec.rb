@@ -5,7 +5,7 @@ describe 'User' do
     it 'should see the information and ratings of that book' do
       book1 = Book.create!(title: 'War and Peace')
       user1 = User.create!(name: 'Chekhov')
-      user1.reviews.create!(body: 'This is a really long book. I prefer plays.', rating: 1)
+      user1.reviews.create!(body: 'This is a really long book. I prefer plays.', rating: 1, book: book1)
 
       visit book_path(book1)
 
